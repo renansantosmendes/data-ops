@@ -26,7 +26,7 @@ def main(args):
 
     base_data = pd.read_csv(args.original_file_url)
     base_data.sample(frac=0.6).to_csv(os.path.join(local_path, new_file_name), index=False)
-    repos.index.add([onew_file_name])
+    repos.index.add([new_file_name])
     repos.index.commit(f'add file {new_file_name}')
     origin = repos.remote('origin')
     origin.push()
