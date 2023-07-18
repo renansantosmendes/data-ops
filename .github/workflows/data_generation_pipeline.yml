@@ -35,4 +35,4 @@ jobs:
 
       - name: Generate .csv file
         run: |
-          python script.py
+          python script.py --username ${{secrets.USERNAME}} --password ${{secrets.PASSWORD}} --original_file_url ${{variables.FILE_URL}}
