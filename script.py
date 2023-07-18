@@ -21,7 +21,7 @@ def main(args):
     else:
         print('Path does not exist')
     print(f'https://{args.username}:{args.password}@github.com/renansantosmendes/mlops-datasets.git')
-    repos = git.Repo.clone_from(url=f'https://github.com/renansantosmendes/mlops-datasets.git',
+    repos = git.Repo.clone_from(url=f'https://{args.username}:{args.password}@github.com/renansantosmendes/mlops-datasets.git',
                                 to_path=os.path.join('.', local_path))
 
     base_data = pd.read_csv(args.original_file_url)
