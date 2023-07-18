@@ -20,7 +20,7 @@ def main(args):
         shutil.rmtree(local_path)
     else:
         print('Path does not exist')
-
+    print(f'https://{args.username}:{args.password}@github.com/renansantosmendes/mlops-datasets.git')
     repos = git.Repo.clone_from(url=f'https://{args.username}:{args.password}@github.com/renansantosmendes/mlops-datasets.git',
                                 to_path=os.path.join('.', local_path))
 
