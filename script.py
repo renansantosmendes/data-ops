@@ -13,15 +13,17 @@ parser.add_argument('--original_file_url', required=True)
 
 def main(args):
     local_path = 'data'
-    str_date = datetime.datetime.now().strftime("%Y%m%d_%H:%M:%S")
+    str_date = datetime.datetime.now().strftime("%Y%m%d_%H-%M-%S")
     new_file_name = f'data_{str_date}.csv'
 
     if os.path.exists(local_path):
-        shutil.rmtree(local_path)
+        shutil.rmtree(local_path,
+                      ignore_errors=True)
     else:
         print('Path does not exist')
     print(f'https://{args.username}:{args.password}@github.com/renansantosmendes/mlops-datasets.git')
-    repos = git.Repo.clone_from(url=f'https://{args.username}:{args.password}@github.com/renansantosmendes/mlops-datasets.git',
+
+    repos = git.Repo.clone_from(url=f'https://{args.username}:{args.password}@github.com/renansantosmendes/mlops-datasets',
                                 to_path=os.path.join('.', local_path))
 
     base_data = pd.read_csv(args.original_file_url)
