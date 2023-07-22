@@ -8,7 +8,7 @@ on:
     - dev
 
   schedule:
-    - cron: '*/6 * * * *'
+    - cron: '*/1440 * * * *'
 
   workflow_dispatch:
   # Allows external webhook trigger
