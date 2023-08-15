@@ -35,4 +35,4 @@ jobs:
 
       - name: Generate .csv file
         run: |
-          python script_azure.py --connection_string ${{secrets.CONNECTION_STRING}} --original_file_url ${{vars.FILE_URL}}
+          python script_azure.py --original_file_url ${{vars.FILE_URL}} --connection_string ${{secrets.CONNECTION_STRING}}
