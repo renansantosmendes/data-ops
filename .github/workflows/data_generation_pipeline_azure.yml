@@ -1,4 +1,4 @@
-name: Generate-Dataset-File-Pipeline
+name: Generate-Dataset-File-Pipeline-Azure
 
 on:
   push:
