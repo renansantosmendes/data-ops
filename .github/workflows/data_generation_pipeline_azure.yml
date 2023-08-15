@@ -35,4 +35,4 @@ jobs:
 
       - name: Generate .csv file
         run: |
-          python script_azure.py --original_file_url ${{vars.FILE_URL}} --connection_string ${{secrets.CONNECTION_STRING}}
+          python script_azure.py --original_file_url ${{vars.FILE_URL}} --default_endpoints_protocol ${{secrets.DEFAULT_ENDPOINTS_PROTOCOL}} --account_name ${{secrets.ACCOUNT_NAME}} --account_key ${{secrets.ACCOUNT_KEY}} --endpoint_suffix ${{secrets.ENDPOINT_SUFFIX}}

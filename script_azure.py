@@ -7,16 +7,19 @@ from azure.storage.blob import BlobServiceClient
 
 
 parser = argparse.ArgumentParser(description='set parameters')
-parser.add_argument('--connection_string', required=True)
+parser.add_argument('--default_endpoints_protocol', required=True)
+parser.add_argument('--account_name', required=True)
+parser.add_argument('--account_key', required=True)
+parser.add_argument('--endpoint_suffix', required=True)
 parser.add_argument('--original_file_url', required=True)
 
 
 def main(args):
-    blob_service_client = BlobServiceClient.from_connection_string(conn_str=args.connection_string)
-    print('Teste')
-    print(args.connection_string)
-    variable = args.connection_string
-    print(variable)
+    connection_string = f"DefaultEndpointsProtocol={args.default_endpoints_protocol};" \
+                        f"AccountName={args.account_name};" \
+                        f"AccountKey={args.account_key};" \
+                        f"EndpointSuffix={args.endpoint_suffix}"
+    blob_service_client = BlobServiceClient.from_connection_string(conn_str=connection_string)
     local_path = '.'
     str_date = datetime.datetime.now().strftime("%Y%m%d_%H-%M-%S")
     new_file_name = f'data_{str_date}.csv'
