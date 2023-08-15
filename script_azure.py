@@ -15,6 +15,8 @@ def main(args):
     blob_service_client = BlobServiceClient.from_connection_string(conn_str=args.connection_string)
     print('Teste')
     print(args.connection_string)
+    variable = args.connection_string
+    print(variable)
     local_path = '.'
     str_date = datetime.datetime.now().strftime("%Y%m%d_%H-%M-%S")
     new_file_name = f'data_{str_date}.csv'
