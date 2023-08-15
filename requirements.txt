@@ -1,4 +1,5 @@
 pandas==1.5.0
 matplotlib==3.6.1
 pytest==7.1.3
-gitpython
+azure-storage-blob==12.17.0
+pycodestyle==2.11.0
